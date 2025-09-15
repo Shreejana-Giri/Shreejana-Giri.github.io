@@ -1,0 +1,214 @@
+.contactHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.contactHeader h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contactInfo h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--primary);
+}
+
+.contactInfo p {
+  color: var(--text-secondary-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+:global(.dark) .contactInfo p {
+  color: var(--text-secondary-dark) !important;
+}
+
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contactCard {
+  background: var(--surface-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+:global(.dark) .contactCard {
+  background: var(--surface-dark) !important;
+}
+
+.contactCard:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.contactTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary-light);
+  margin-bottom: var(--spacing-xs);
+}
+
+:global(.dark) .contactTitle {
+  color: var(--text-primary-dark) !important;
+}
+
+.contactValue {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contactDescription {
+  font-size: 0.875rem;
+  color: var(--text-secondary-light);
+}
+
+:global(.dark) .contactDescription {
+  color: var(--text-secondary-dark) !important;
+}
+
+.contactForm {
+  background: var(--surface-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  height: fit-content;
+}
+
+:global(.dark) .contactForm {
+  background: var(--surface-dark) !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.label {
+  font-weight: 500;
+  color: var(--text-primary-light);
+  font-size: 0.875rem;
+}
+
+:global(.dark) .label {
+  color: var(--text-primary-dark) !important;
+}
+
+.input,
+.textarea {
+  padding: 0.875rem 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  background: var(--surface-light);
+  color: var(--text-primary-light);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  resize: vertical;
+}
+
+:global(.dark) .input,
+:global(.dark) .textarea {
+  background: var(--surface-dark) !important;
+  color: var(--text-primary-dark) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-secondary-light);
+}
+
+:global(.dark) .input::placeholder,
+:global(.dark) .textarea::placeholder {
+  color: var(--text-secondary-dark) !important;
+}
+
+.submitButton {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton.submitting {
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: var(--spacing-xs);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.successMessage {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  text-align: center;
+  animation: slideInUp 0.5s ease-out;
+}
+
+:global(.dark) .successMessage {
+  background: rgba(16, 185, 129, 0.2) !important;
+}
+
+.successMessage p {
+  color: var(--accent);
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .contactCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .contactForm {
+    padding: var(--spacing-lg);
+  }
+}

@@ -1,0 +1,123 @@
+.footer {
+  background: var(--surface-light);
+  border-top: 1px solid var(--glass-border);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+:global(.dark) .footer {
+  background: var(--surface-dark) !important;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-xl);
+  align-items: start;
+  margin-bottom: var(--spacing-xl);
+}
+
+.footerBrand h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footerBrand p {
+  color: var(--text-secondary-light);
+  max-width: 300px;
+}
+
+:global(.dark) .footerBrand p {
+  color: #F9FAFB !important;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  color: var(--text-primary-light);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+:global(.dark) .socialLink {
+  color: #F9FAFB !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.socialLink:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.backToTop {
+  background: none;
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary-light);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+:global(.dark) .backToTop {
+  color: #F9FAFB !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.backToTop:hover {
+  background: rgba(99, 102, 241, 0.1);
+  backdrop-filter: var(--glass-backdrop);
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  text-align: center;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.footerBottom p {
+  color: var(--text-secondary-light);
+}
+
+:global(.dark) .footerBottom p {
+  color: #F9FAFB !important;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .footerLinks {
+    align-items: center;
+  }
+  
+  .footerBrand p {
+    max-width: none;
+  }
+}
